@@ -464,17 +464,14 @@ The bot uses Jinja2 templates to format summaries. You can customize the output 
 **Custom template example:**
 
 Create `templates/my_template.txt`:
-```jinja2
-📊 {{ header }}
+```html
+<b>{{ header }}</b>
 
 {% for topic in topics %}
-🔹 {% if topic.link %}[{{ topic.topic }}]({{ topic.link }}){% else %}{{ topic.topic }}{% endif %}
-   {{ topic.description }}
-   {% if topic.message_count > 1 %}📝 Messages: {{ topic.message_count }}{% endif %}
-   {% if topic.participants %}👥 Participants: {{ topic.participants | join(', ') }}{% endif %}
+• {% if topic.link %}<a href="{{ topic.link }}">{{ topic.topic }}</a>{% else %}{{ topic.topic }}{% endif %}{% if topic.message_count > 1 %} ({{ topic.message_count }}){% endif %}. {{ topic.description }}{% if topic.participants %}
+<i>{{ topic.participants | join(', ') }}</i>{% endif %}
 
 {% endfor %}
-
 {{ footer }}
 ```
 
