@@ -1,0 +1,9 @@
+<b>{{ header }}</b>
+
+{% for topic in topics %}
+• {% if topic.link %}<a href="{{ topic.link }}">{{ topic.topic }}</a>{% else %}{{ topic.topic }}{% endif %}{% if topic.message_count > 1 %} ({{ topic.message_count }}){% endif %}. {{ topic.description }}{% if topic.participants %}
+<i>{{ topic.participants | join(', ') }}</i>{% endif %}
+
+{% endfor %}
+{{ footer }}
+

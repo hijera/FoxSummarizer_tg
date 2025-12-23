@@ -1,0 +1,59 @@
+[
+  {
+    "message_id": 1,
+    "text": "Привет! Кто-нибудь знает, как настроить Docker на Windows?",
+    "username": "user1",
+    "first_name": "Иван",
+    "user_id": 12345
+  },
+  {
+    "message_id": 2,
+    "text": "Да, нужно установить Docker Desktop. Это самый простой способ.",
+    "username": "user2",
+    "first_name": "Мария",
+    "user_id": 67890
+  },
+  {
+    "message_id": 3,
+    "text": "Спасибо! А где скачать?",
+    "username": "user1",
+    "first_name": "Иван",
+    "user_id": 12345
+  },
+  {
+    "message_id": 4,
+    "text": "На официальном сайте docker.com/products/docker-desktop",
+    "username": "user2",
+    "first_name": "Мария",
+    "user_id": 67890
+  },
+  {
+    "message_id": 5,
+    "text": "Отлично, попробую установить сегодня вечером.",
+    "username": "user1",
+    "first_name": "Иван",
+    "user_id": 12345
+  },
+  {
+    "message_id": 6,
+    "text": "Кстати, после установки нужно включить WSL2, если его еще нет.",
+    "username": "user2",
+    "first_name": "Мария",
+    "user_id": 67890
+  },
+  {
+    "message_id": 7,
+    "text": "А что такое WSL2?",
+    "username": "user1",
+    "first_name": "Иван",
+    "user_id": 12345
+  },
+  {
+    "message_id": 8,
+    "text": "Windows Subsystem for Linux - позволяет запускать Linux окружение в Windows.",
+    "username": "user2",
+    "first_name": "Мария",
+    "user_id": 67890
+  }
+]
+
