@@ -566,8 +566,9 @@ class OpenAIService:
             # Усиливаем системную инструкцию для структурированного вывода
             system_prompt = f"{prompt}\n\n{structured_system_prompt_to_use}"
             user_input = self._structured_user_prompt_template.format(messages_text=messages_text)
-            # Используем значение из конфига, если указано, иначе дефолтное значение
-            structured_max_tokens = max_output_tokens if max_output_tokens is not None and max_output_tokens > 0 else 65535
+            # Используем значение из конфига, если указано и > 0, иначе None (без ограничения)
+            # Если max_output_tokens не указан или равен 0, передаем None, чтобы не ограничивать ответ
+            structured_max_tokens = max_output_tokens if (max_output_tokens is not None and max_output_tokens > 0) else None
             structured: TopicsResponse = await self._responses_parse_with_retries(
                 system=system_prompt,
                 input_text=user_input,
@@ -607,8 +608,9 @@ class OpenAIService:
             # Фолбэк: старый путь через chat.completions и парсинг текста
             try:
                 user_content = self._fallback_user_prompt_template.format(messages_text=messages_text)
-                # Используем значение из конфига, если указано, иначе дефолтное значение
-                fallback_max_tokens = max_output_tokens if max_output_tokens is not None and max_output_tokens > 0 else 32000
+                # Используем значение из конфига, если указано и > 0, иначе None (без ограничения)
+                # Если max_output_tokens не указан или равен 0, передаем None, чтобы не ограничивать ответ
+                fallback_max_tokens = max_output_tokens if (max_output_tokens is not None and max_output_tokens > 0) else None
                 response = await self._chat_completion_with_retries(
                     messages=[
                         {"role": "system", "content": prompt},
