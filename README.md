@@ -4,7 +4,7 @@ Telegram bot for automatic summarization of group messages using OpenAI and spee
 
 ### Features
 
-- **Message collection**: automatically collects all text messages from specified channels
+- **Message collection**: automatically collects all text messages from specified channels or groups
 - **Voice message recognition**: transcribes audio via **WhisperX**
 - **Relevance filtering**: filters messages using OpenAI before summarization (optional)
 - **Topic-based summaries**: groups messages by topics and produces 1–2 sentence summaries per topic
