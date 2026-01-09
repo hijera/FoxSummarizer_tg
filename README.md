@@ -1,6 +1,6 @@
 ## Fox Telegram Summarizer Bot
 
-Telegram bot for automatic summarization of channel messages using OpenAI and speech-to-text for voice messages via WhisperX. The bot collects messages from specified channels, groups them by topics, and creates concise summaries.
+Telegram bot for automatic summarization of group messages using OpenAI and speech-to-text for voice messages via WhisperX. The bot collects messages from specified channels, groups them by topics, and creates concise summaries.
 
 ### Features
 
